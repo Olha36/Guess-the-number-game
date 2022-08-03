@@ -1,5 +1,9 @@
+p {
+    color: white;
+}
 .vanta-canvas {
     height: 675px;
+    z-index: 0;
 }
 .wrapper-container {
     margin-left: 100px;
@@ -9,4 +13,11 @@
 }
 .wrapper-container h1 {
     color:white
+}
+.submit {
+    display: flex;
+    align-items: center;
+}
+button {
+    height: 22px;
 }
