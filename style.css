@@ -1,0 +1,12 @@
+.vanta-canvas {
+    height: 675px;
+}
+.wrapper-container {
+    margin-left: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.wrapper-container h1 {
+    color:white
+}
