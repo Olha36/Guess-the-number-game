@@ -14,10 +14,13 @@ p {
 .wrapper-container h1 {
     color:white
 }
-.submit {
+.submitAll {
     display: flex;
     align-items: center;
 }
 button {
     height: 22px;
+}
+.result {
+    text-align: center;
 }

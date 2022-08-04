@@ -16,14 +16,25 @@
                 <br> See if you can guess it in 10 turns or fewer. We'll tell you 
                 <br> if your guess was too high or too low.
             </p>
-            <div class="submit">
-                <p>Enter a guess: <input type="text" name="input" placeholder="enter the number"></p>
-                <button>submit guess</button>
+            <div class="submitAll">
+                <p class="guess">Enter a guess: <input type="text" name="input"></p>
+                <button class="submit">submit guess</button>
             </div>
             <!-- <p>Enter a guess: <input type="text" name="input"></p>
             <button>submit guess</button> -->
+
+            <div class="result">
+                <p class="guesses"></p>
+                <p class="lastResult"></p>
+                <p class="lowOrHigh"></p>
+            </div>
         </div>
+        
         <div class="vanta-canvas"></div>
+        <!-- <div class="result">
+            <p class="lastResult">123</p>
+            <p class="LowOrHigh">456</p>
+        </div> -->
     </div>
 
     <script src="js/script.js"></script>
