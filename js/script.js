@@ -13,8 +13,10 @@ const lowOrHigh = document.querySelector('.lowOrHigh');
 const submit = document.querySelector('.submit');
 const guesses = document.querySelector('.guesses');
 const guessField = document.querySelector('.guessField');
-const guessCount = 1;
+let guessCount = 1;
 let resetButton;
+
+guessField.focus();
 
 // пишем функцию checkGuess, которая будет проверять сделал ли игрок правильный выбор и соответствующе реагировать
 
@@ -23,6 +25,7 @@ function checkGuess() {
     if (guessCount === 1) {
         guesses.textContent = 'Previous guesses: ';
     } 
+    
     guesses.textContent += userGuess + ' ';
 
     if (userGuess === randomNumber) {
@@ -32,6 +35,7 @@ function checkGuess() {
         setGameOver();
     } else if (guessCount === 10) {
         result.textContent = 'Game over!';
+        lowOrHigh.textContent = '';
         setGameOver();
     } else {
         result.textContent = 'Wrong!';
@@ -42,7 +46,8 @@ function checkGuess() {
             lowOrHigh.textContent = 'Last guess was too high';
         }
     }
-    guessCount+1;
+
+    guessCount++;
     guessField.value = '';
     guessField.focus();
 }
@@ -52,9 +57,9 @@ submit.addEventListener('click', checkGuess);
 function setGameOver () {
     guessField.disabled = true;
     submit.disabled = true;
-    const resetButton = document.createElement('button');
+    resetButton = document.createElement('button');
     resetButton.textContent = 'Start new game';
-    document.body.appendChild(resetButton);
+    document.getElementById('resetButton').appendChild(resetButton);
     resetButton.addEventListener('click', resetGame);
 }
 
@@ -66,6 +71,7 @@ function resetGame() {
     for (let i = 0; i < resetParas.length; i++) {
         resetParas[i].textContent = '';
     }
+
     resetButton.parentNode.removeChild(resetButton);
 
     guessField.disabled = false;
@@ -75,14 +81,12 @@ function resetGame() {
 
 
     result.style.backgroundColor = 'white';
-    
-    let randomNumber = getRandom(1, 100);
+
 
     function getRandom2(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    let randomNumber2 = getRandom2
-    console.log(randomNumber2);
+    let randomNumber2 = getRandom2;
 }
 
 
