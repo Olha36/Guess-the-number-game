@@ -27,3 +27,28 @@ button {
 .result {
     text-align: center;
 }
+
+@media screen and (max-width: 991px) {
+    .wrapper-container {
+        top: 20%;
+        margin-left: 78px;
+    }
+}
+@media screen and (max-width: 575px) {
+    .wrapper-container {
+        margin-left: 16px;
+    }
+    .wrapper-container h1 {
+        font-size: 1em;
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    p, .submit, button {
+        font-size: 0.5em;
+    }
+    .classField {
+        width: 112px;
+    }
+}
