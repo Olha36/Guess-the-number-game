@@ -6,13 +6,12 @@ function getRandom(min, max) {
 let randomNumber = getRandom(1, 100);
 console.log(randomNumber);
 
-
-// const guessNumber = document.querySelector('.guesses');
 const result = document.querySelector('.lastResult');
 const lowOrHigh = document.querySelector('.lowOrHigh');
 const submit = document.querySelector('.submit');
 const guesses = document.querySelector('.guesses');
 const guessField = document.querySelector('.guessField');
+let div = document.querySelector('.div');
 let guessCount = 1;
 let resetButton;
 
@@ -32,10 +31,12 @@ function checkGuess() {
         result.textContent = 'Congratulations! You got it right!';
         result.style.backgroundColor = 'green';
         lowOrHigh.textContent = '';
+
         setGameOver();
     } else if (guessCount === 10) {
         result.textContent = 'Game over!';
         lowOrHigh.textContent = '';
+
         setGameOver();
     } else {
         result.textContent = 'Wrong!';
@@ -57,10 +58,12 @@ submit.addEventListener('click', checkGuess);
 function setGameOver () {
     guessField.disabled = true;
     submit.disabled = true;
-    resetButton = document.createElement('button');
-    resetButton.textContent = 'Start new game';
-    document.getElementById('resetButton').appendChild(resetButton);
-    resetButton.addEventListener('click', resetGame);
+
+    let div = document.querySelector('.div');
+    div.classList.add('resetButton');
+    div.style.opacity = 1;
+
+    div.addEventListener('click', resetGame);
 }
 
 function resetGame() {
@@ -72,21 +75,16 @@ function resetGame() {
         resetParas[i].textContent = '';
     }
 
-    resetButton.parentNode.removeChild(resetButton);
-
     guessField.disabled = false;
     submit.disabled = false;
     guessField.value = '';
     guessField.focus();
-
+    div.style.opacity = 0;
 
     result.style.backgroundColor = 'white';
 
-
-    function getRandom2(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    let randomNumber2 = getRandom2;
+    let randomNumber = getRandom(1, 100);
+    console.log(randomNumber);
 }
 
 

@@ -1,6 +1,9 @@
 p {
     color: white;
 }
+button {
+    height: 22px;
+}
 .vanta-canvas {
     height: 675px;
     z-index: 0;
@@ -18,8 +21,8 @@ p {
     display: flex;
     align-items: center;
 }
-button {
-    height: 22px;
+.div {
+    opacity: 0;
 }
 .result {
     text-align: center;
